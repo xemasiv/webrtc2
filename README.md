@@ -27,16 +27,17 @@
 * Iterations on pending request should be triggered on each new incoming request, reactive approach.
 * `NAMESPACE` parameter may be used so the server can be used by different projects.
 * `https://github.com/expressjs/compression` can compress the signal string length.
-* Use of client signatures along with namespaces, like `https://keybase.io/kbpgp`
+* Use of client signatures along with namespaces, like `https://keybase.io/kbpgp`:
   * Load private key.
   * Load trusted public keys.
   * Sign outgoing, verify incoming.
   * Payload looks like `SIGNED_NAMESPACE`, `SIGNED_SIGNAL`, `PUBLIC_KEY`
-* HTTP error codes on specific scenarios
+* HTTP status codes on specific scenarios:
   * `299` (No Peer) - When no available peer is found.
   * `298` (No Namespace Peer) - When no available peer in specified namespace is found.
   * `297` (Rate Limit) - Request is immediately dropped because you're requesting too fast.
-* Request limits
+  * `499` (Missing Parameter) - Request error caused by a missing parameter.
+* Possible rate limits:
   * 1 request / second.
   * 1 peer connection / 5 seconds.
 
