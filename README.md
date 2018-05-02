@@ -55,6 +55,9 @@
 
 ### Paired Peer Memory
 
+* Server mechanism for remembering which peers have been paired in the last x minutes.
+* Can use `https://www.npmjs.com/package/express-fingerprint` for server-side fingerprinting.
+
 ```
 let peer1_fingerprint = 'peer1';
 let peer2_fingerprint = 'peer2';
@@ -66,12 +69,12 @@ PairMemory.set(record); // Save record
 setInterval(() => {
 
   PairMemory.forEach((value, key) => {
-    if ((Date.now() - key.timestamp) > 3600 * 1000) { // If record was order than 1 hr..
-      PairMemory.delete(key); // Delete.
+    if ((Date.now() - key.timestamp) > 300 * 1000) { // If record was older than 5 mins..
+      PairMemory.delete(key); // Delete it.
     }
   });
   
-}, 30000); // Check every 30 seconds.
+}, 30000); // Do cleanup every 30 seconds.
 ```
 
 ## License
