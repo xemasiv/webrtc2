@@ -41,6 +41,27 @@
   * 1 request / second.
   * 1 peer connection / 5 seconds.
 
+### Paired Peer Memory
+
+```
+let peer1_fingerprint = 'peer1';
+let peer2_fingerprint = 'peer2';
+let record = { peer1_fingerprint, peer2_fingerprint, timestamp: Date.now() }; // Create record.
+
+let PairMemory = new Map();
+PairMemory.set(record); // Save record
+
+setInterval(() => {
+
+  PairMemory.forEach((value, key) => {
+    if ((Date.now() - key.timestamp) > 3600 * 1000) { // If record was order than 1 hr..
+      PairMemory.delete(key); // Delete.
+    }
+  });
+  
+}, 30000); // Check every 30 seconds.
+```
+
 ## License
 
 Attribution 4.0 International (CC BY 4.0)
