@@ -79,7 +79,7 @@ setInterval(() => {
 }, 30000); // Do cleanup every 30 seconds.
 ```
 
-### Paired Peer Rotation
+### Best-latency peer rotation
 
 * Summary:
   * Server-assisted peer rotation, clients' high-latency peers are exchanged to lower-latency peers.
