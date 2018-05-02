@@ -102,6 +102,31 @@ setInterval(() => {
 * Distance between two (2) geolocations
   * https://www.npmjs.com/package/spherical-geometry-js
 
+### Latency Rating
+* Returns an average rating of given latencies.
+* Where highest rating (100) is at `0 ms` latency, and lowest rating (0) is at `1000ms` latency
+* function `rateLatency`
+  * Takes multiple `latencies` as arguments, or single array of `latencies` as argument
+  * Returns `String`
+```
+var rateLatency = (...latencies) => {
+  const baseline = 1000;
+  if (latencies.length === 1 && Array.isArray(latencies[0]) === true) {
+    latencies = latencies[0];
+  }
+  const ratings = latencies.map((latency) => {
+    return (((baseline - latency) / baseline) * 100);
+  });
+  return parseFloat(ratings.reduce((a, b) => a + b) / latencies.length).toFixed(2);
+}
+```
+
+* Usage:
+```
+rateLatency([50, 100, 200, 1001, 165]);
+rateLatency(50, 100, 200, 1001, 165);
+```
+
 ### Proof of Transfer Integrity
 
 * Summary:
