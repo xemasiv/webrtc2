@@ -2,8 +2,10 @@
 
 ## Libraries
 
-* Client Fingerprinting
+* Client-side Fingerprinting
   * https://github.com/Valve/fingerprintjs2
+* Server-side Fingerprinting
+  * https://www.npmjs.com/package/express-fingerprint
 * Browser Client
   * https://github.com/feross/simple-peer
 * Client Signatures
@@ -30,7 +32,10 @@
   * Load trusted public keys.
   * Sign outgoing, verify incoming.
   * Payload looks like `SIGNED_NAMESPACE`, `SIGNED_SIGNAL`, `PUBLIC_KEY`
-  
+* HTTP error codes on specific scenarios
+  * `299` (No Peer) - When no available peer is found.
+  * `298` (No Namespace Peer) - When no available peer in specified namespace is found.
+  * `297` (Too Soon) - Request is immediately dropped because you're asking for a new peer too soon.
 
 ## License
 
