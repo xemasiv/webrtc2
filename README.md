@@ -2,18 +2,17 @@
 
 ## Libraries
 
-* Browser Client
-  * https://github.com/feross/simple-peer
-* Server Client
-  * https://www.npmjs.com/package/wrtc
-* Client-side Fingerprinting
-  * https://github.com/Valve/fingerprintjs2
-* Server-side Fingerprinting
-  * https://www.npmjs.com/package/express-fingerprint
-* Client Signatures
-  * https://keybase.io/kbpgp
-* Client Storage
-  * https://www.npmjs.com/package/localforage
+| Side | Library | Link | Purpose |
+| :----: | :-------: | :---- | :------- |
+| Client | simple-peer | https://www.npmjs.com/package/simple-peer | WebRTC |
+| Server | wrtc | https://www.npmjs.com/package/wrtc | WebRTC |
+| Client | fingerprintjs2 | https://www.npmjs.com/package/fingerprintjs2 | Fingerprint |
+| Server | express-fingerprint | https://www.npmjs.com/package/express-fingerprint | Fingerprint |
+| Client | localforage | https://www.npmjs.com/package/localforage | Storage |
+| Client | kbpgp | https://www.npmjs.com/package/kbpgp | Signatures |
+| Both | js-sha3 | https://github.com/emn178/js-sha3 | Hashing |
+| Both | js-sha256 | https://github.com/emn178/js-sha256 | Hashing |
+| Both | js-sha512 | https://github.com/emn178/js-sha512 | Hashing |
 
 ## Concepts
 
