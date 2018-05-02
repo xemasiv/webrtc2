@@ -79,6 +79,17 @@ setInterval(() => {
 }, 30000); // Do cleanup every 30 seconds.
 ```
 
+### Paired Peer Rotation
+
+* Summary:
+  * Server-assisted peer rotation, clients' high-latency peers are exchanged to lower-latency peers.
+* How:
+  * Clients have their own server-identified id's.
+  * Clients sync their `time` adjustment using servers.
+  * Clients measure their latency with their peers.
+  * Clients send their results to server.
+  * Server works with this data.
+
 ## License
 
 Attribution 4.0 International (CC BY 4.0)
