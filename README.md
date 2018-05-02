@@ -1,9 +1,13 @@
 # webrtc2
 
+## Libraries
+
 * Client Fingerprinting
   * https://github.com/Valve/fingerprintjs2
+* Browser Client
+  * https://github.com/feross/simple-peer
 
----
+## Concepts
 
 ## License
 
