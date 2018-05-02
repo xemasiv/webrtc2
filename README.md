@@ -1,5 +1,8 @@
 # webrtc2
 
+* Client Fingerprinting
+  * https://github.com/Valve/fingerprintjs2
+
 ---
 
 ## License
