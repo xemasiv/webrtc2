@@ -47,7 +47,7 @@
   * If alice is already connected to bob, and receives an answer from bob.. This shouldn't happen, but instead Alice disregards it and sends a new `{ TYPE: 'CONNECT', SIGNAL }` again.
   * If bob timeout, bob sends new `{ TYPE: 'CONNECT', SIGNAL }`
   * If alice timeout, alice sends new `{ TYPE: 'CONNECT', SIGNAL }`
-  * If server receives bob's answer but alice's request is already disconnected / void, server sends bob another `{ TYPE: 'DEMOTE', NONCE,  SIGNAL}`
+  * If server receives bob's answer but alice's request is already disconnected / void, server sends bob another `{ TYPE: 'DEMOTE', NONCE,  SIGNAL}`. Use `https://stackoverflow.com/a/32469346` / `https://www.npmjs.com/package/on-finished` to detect disconnection with express.
 
 ### Paired Peer Memory
 
