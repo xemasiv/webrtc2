@@ -8,7 +8,6 @@
 | Server | wrtc | https://www.npmjs.com/package/wrtc | WebRTC |
 | Both | simple-websocket | https://github.com/feross/simple-websocket | WebSockets |
 | Client | fingerprintjs2 | https://www.npmjs.com/package/fingerprintjs2 | Fingerprint |
-| Server | express-fingerprint | https://www.npmjs.com/package/express-fingerprint | Fingerprint |
 | Client | localforage | https://www.npmjs.com/package/localforage | Storage |
 | Client | kbpgp | https://www.npmjs.com/package/kbpgp | Signatures |
 | Both | js-sha3 | https://github.com/emn178/js-sha3 | Hashes |
@@ -16,6 +15,28 @@
 | Both | js-sha512 | https://github.com/emn178/js-sha512 | Hashes |
 | Both | moment | https://www.npmjs.com/package/moment | Time |
 | Both | pako | https://www.npmjs.com/package/pako | Compression |
+
+### Gists
+
+* Simplified Server-side Signature
+```
+const circular = require('circular-json');
+const sha3_256 = require('js-sha3').sha3_256;
+const useragent = require('useragent');
+const geoip = require('geoip-lite');
+
+const signature = (req) => {
+  const agent = useragent.lookup(req.headers['user-agent']).toJSON();
+  const geo = geoip.lookup(req.ip);
+  const headers = {
+    host: req.headers['host'],
+    accept: req.headers['accept'],
+    language: req.headers['accept-language']
+  };
+  let signature = sha3_256(circular.stringify({ agent, geo, headers }));
+  return signature;
+};
+```
 
 ## Concepts
 
