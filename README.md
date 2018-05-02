@@ -14,6 +14,7 @@
 | Both | js-sha256 | https://github.com/emn178/js-sha256 | Hashes |
 | Both | js-sha512 | https://github.com/emn178/js-sha512 | Hashes |
 | Both | moment | https://www.npmjs.com/package/moment | Time |
+| Both | pako | https://www.npmjs.com/package/pako | Compression |
 
 ## Concepts
 
