@@ -35,7 +35,10 @@
 * HTTP error codes on specific scenarios
   * `299` (No Peer) - When no available peer is found.
   * `298` (No Namespace Peer) - When no available peer in specified namespace is found.
-  * `297` (Too Soon) - Request is immediately dropped because you're asking for a new peer too soon.
+  * `297` (Rate Limit) - Request is immediately dropped because you're requesting too fast.
+* Request limits
+  * 1 request / second.
+  * 1 peer connection / 5 seconds.
 
 ## License
 
