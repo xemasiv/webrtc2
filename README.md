@@ -2,14 +2,18 @@
 
 ## Libraries
 
+* Browser Client
+  * https://github.com/feross/simple-peer
+* Server Client
+  * https://www.npmjs.com/package/wrtc
 * Client-side Fingerprinting
   * https://github.com/Valve/fingerprintjs2
 * Server-side Fingerprinting
   * https://www.npmjs.com/package/express-fingerprint
-* Browser Client
-  * https://github.com/feross/simple-peer
 * Client Signatures
   * https://keybase.io/kbpgp
+* Client Storage
+  * https://www.npmjs.com/package/localforage
 
 ## Concepts
 
