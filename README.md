@@ -6,6 +6,8 @@
   * https://github.com/Valve/fingerprintjs2
 * Browser Client
   * https://github.com/feross/simple-peer
+* Client Signatures
+  * https://keybase.io/kbpgp
 
 ## Concepts
 
@@ -20,8 +22,16 @@
 | Response | ANSWER    | SIGNAL | Bob's answer sent to Alice by server. |
 | Response | DELIVERED |  | Server's confirmation that bob's answer has been sent to Alice. |
 
+* Iterations on pending request should be triggered on each new incoming request, reactive approach.
 * `NAMESPACE` parameter may be used so the server can be used by different projects.
 * `https://github.com/expressjs/compression` can compress the signal string length.
+* Use of client signatures along with namespaces, like `https://keybase.io/kbpgp`
+  * Load private key.
+  * Load trusted public keys.
+  * Sign outgoing, verify incoming.
+  * Trusted public keys can be hashed to shorten them during verifications. Faster key matching, smaller payload.
+  * Payload looks like `SIGNED_NAMESPACE`, `SIGNED_SIGNAL`, `PUBLIC_KEY_SHA3`
+  
 
 ## License
 
