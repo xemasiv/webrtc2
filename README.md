@@ -6,6 +6,7 @@
 | :----: | :-------: | :---- | :------- |
 | Client | simple-peer | https://www.npmjs.com/package/simple-peer | WebRTC |
 | Server | wrtc | https://www.npmjs.com/package/wrtc | WebRTC |
+| Both | simple-websocket | https://github.com/feross/simple-websocket | WebSockets |
 | Client | fingerprintjs2 | https://www.npmjs.com/package/fingerprintjs2 | Fingerprint |
 | Server | express-fingerprint | https://www.npmjs.com/package/express-fingerprint | Fingerprint |
 | Client | localforage | https://www.npmjs.com/package/localforage | Storage |
