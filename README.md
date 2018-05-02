@@ -23,6 +23,7 @@
 | Request  | CONNECT   | NONCE, SIGNAL | Bob's answer to Alice's signal, sent to server. |
 | Response | ANSWER    | SIGNAL | Bob's answer sent to Alice by server. |
 | Response | DELIVERED |  | Server's confirmation that bob's answer has been sent to Alice. |
+| Request  | BOUNCE   | NONCE, SIGNAL | Bob's new signal, plus Nonce from Alice to be bounced, sent to server. |
 
 * Iterations on pending request should be triggered on each new incoming request, reactive approach.
 * `NAMESPACE` parameter may be used so the server can be used by different projects.
@@ -37,9 +38,16 @@
   * `298` (No Namespace Peer) - When no available peer in specified namespace is found.
   * `297` (Rate Limit) - Request is immediately dropped because you're requesting too fast.
   * `499` (Missing Parameter) - Request error caused by a missing parameter.
-* Possible rate limits:
+* Possible configs / rate limits:
   * 1 request / second.
   * 1 peer connection / 5 seconds.
+  * Request timeout: 15 seconds
+* Possible action fallbacks
+  * If bob already connected to alice and receives alice's request.. Bob sends `{ TYPE: 'BOUNCE', NONCE, SIGNAL}` to bounce it, for server to reassign alice, and for bob to reassign his signal to another peer.
+  * If alice is already connected to bob, and receives an answer from bob.. This shouldn't happen, but instead Alice disregards it and sends a new `{ TYPE: 'CONNECT', SIGNAL }` again.
+  * If bob timeout, bob sends new `{ TYPE: 'CONNECT', SIGNAL }`
+  * If alice timeout, alice sends new `{ TYPE: 'CONNECT', SIGNAL }`
+  * If server receives bob's answer but alice's request is already disconnected / void, server sends bob another `{ TYPE: 'DEMOTE', NONCE,  SIGNAL}`
 
 ### Paired Peer Memory
 
