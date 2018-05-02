@@ -123,8 +123,8 @@ var rateLatency = (...latencies) => {
 
 * Usage:
 ```
-rateLatency([50, 100, 200, 1001, 165]);
-rateLatency(50, 100, 200, 1001, 165);
+rateLatency([50, 100, 200, 1001, 165]); // "69.68"
+rateLatency(50, 100, 200, 1001, 165); // "69.88"
 ```
 
 ### Proof of Transfer Integrity
