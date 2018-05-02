@@ -101,7 +101,25 @@ setInterval(() => {
   * https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation
 * Distance between two (2) geolocations
   * https://www.npmjs.com/package/spherical-geometry-js
-  
+
+### Proof of Transfer Integrity
+
+* Summary:
+  * Ensures data integrity between transfers by chunks.
+  * Easily detects data integrity issues before the whole data is truncated.
+  * Uses a hash-chain, and optionally a nonce.
+* Scenario 1, Server sents File to Alice:
+  * Server hashes each chunk sent to Alice (with optional nonce).
+  * Upon receipt, alice hashes received chunk (with nonce) and sends hash to server.
+  * Server verifies hash.
+* Senario 2, Alice sends File to Bob, verifies with Servers:
+  * Alice hashes each chunk sent to bob (with optional nonce).
+  * Upon receipt, bob hashes received chunk (with nonce) and sends hash to server.
+  * Server verifies hash.
+* Senario 3, Alice sends File to Bob, verifies with Watchers:
+  * Alice hashes each chunk sent to bob (with optional nonce).
+  * Upon receipt, bob hashes received chunk (with nonce) and sends hash (and nonce) to watchers.
+  * Watchers verifies hash.
 
 ## License
 
