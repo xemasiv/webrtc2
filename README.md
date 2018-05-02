@@ -83,12 +83,25 @@ setInterval(() => {
 
 * Summary:
   * Server-assisted peer rotation, clients' high-latency peers are exchanged to lower-latency peers.
+  * Goal is to cut-off ties with high-latency peers, in exchange for lower-latency peers.
 * How:
   * Clients have their own server-identified id's.
   * Clients sync their `time` adjustment using servers.
   * Clients measure their latency with their peers.
-  * Clients send their results to server.
-  * Server works with this data.
+  * Clients send their geolocation to server (more accurate that relying on IP to Location).
+  * Server identifies non-linked peers nearby clients.
+  * Server identifies the closer ones using Google's spatial geometry function.
+  * Client identifies best-replaceable peers (those with high-latency over X samples)
+  * Server sends suggestion to client about potential connection :heart:
+* Factors considered:
+  * Latency of clients with their existing peers
+  * Geolocation of clients
+* Client Geolocation:
+  * https://caniuse.com/#feat=geolocation
+  * https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation
+* Distance between two (2) geolocations
+  * https://www.npmjs.com/package/spherical-geometry-js
+  
 
 ## License
 
