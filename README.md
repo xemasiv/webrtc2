@@ -10,7 +10,7 @@
 ## Concepts
 
 ### Spacerifts
-* Servers are simple HTTP Servers
+* HTTP-based peer-linking mechanism with minimum possible roundtrips.
 
 | Method          | TYPE Parameter   | Other Parameters | Description   |
 | :-------------: | :-------------:  | :-------------:    | :------------- |
@@ -19,6 +19,9 @@
 | Request  | CONNECT   | NONCE, SIGNAL | Bob's answer to Alice's signal, sent to server. |
 | Response | ANSWER    | SIGNAL | Bob's answer sent to Alice by server. |
 | Response | DELIVERED |  | Server's confirmation that bob's answer has been sent to Alice. |
+
+* `NAMESPACE` parameter may be used so the server can be used by different projects.
+* `https://github.com/expressjs/compression` can compress the signal string length.
 
 ## License
 
