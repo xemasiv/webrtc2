@@ -29,8 +29,7 @@
   * Load private key.
   * Load trusted public keys.
   * Sign outgoing, verify incoming.
-  * Trusted public keys can be hashed to shorten them during verifications. Faster key matching, smaller payload.
-  * Payload looks like `SIGNED_NAMESPACE`, `SIGNED_SIGNAL`, `PUBLIC_KEY_SHA3`
+  * Payload looks like `SIGNED_NAMESPACE`, `SIGNED_SIGNAL`, `PUBLIC_KEY`
   
 
 ## License
