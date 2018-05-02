@@ -9,6 +9,17 @@
 
 ## Concepts
 
+### Spacerifts
+* Servers are simple HTTP Servers
+
+| Method          | TYPE Parameter   | Other Parameters | Description   |
+| :-------------: | :-------------:  | :-------------:    | :------------- |
+| Request  | CONNECT   | SIGNAL        | Sent to server by Alice and Bob, as Initiators. |
+| Response | DEMOTE    | NONCE, SIGNAL | Server sends Bob a Nonce and Alice's Signal for him to answer instead. |
+| Request  | CONNECT   | NONCE, SIGNAL | Bob's answer to Alice's signal, sent to server. |
+| Response | ANSWER    | SIGNAL | Bob's answer sent to Alice by server. |
+| Response | DELIVERED |  | Server's confirmation that bob's answer has been sent to Alice. |
+
 ## License
 
 Attribution 4.0 International (CC BY 4.0)
