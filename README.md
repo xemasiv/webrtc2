@@ -10,9 +10,10 @@
 | Server | express-fingerprint | https://www.npmjs.com/package/express-fingerprint | Fingerprint |
 | Client | localforage | https://www.npmjs.com/package/localforage | Storage |
 | Client | kbpgp | https://www.npmjs.com/package/kbpgp | Signatures |
-| Both | js-sha3 | https://github.com/emn178/js-sha3 | Hashing |
-| Both | js-sha256 | https://github.com/emn178/js-sha256 | Hashing |
-| Both | js-sha512 | https://github.com/emn178/js-sha512 | Hashing |
+| Both | js-sha3 | https://github.com/emn178/js-sha3 | Hashes |
+| Both | js-sha256 | https://github.com/emn178/js-sha256 | Hashes |
+| Both | js-sha512 | https://github.com/emn178/js-sha512 | Hashes |
+| Both | moment | https://www.npmjs.com/package/moment | Time |
 
 ## Concepts
 
